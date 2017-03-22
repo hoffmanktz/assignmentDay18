@@ -6,6 +6,8 @@
 
 */
 
+var inventoryArray = [];
+
 // Constructor of Item (description, price, stock)
 var inventoryItems = function(description, price, stockLevel) {
 	this.description = description;
@@ -92,3 +94,44 @@ var sleep = function(milliseconds) {
 };
 
 //-------------------------------------------------------
+
+// run the program
+run = function() {
+  var zooAnimal1 = new zooAnimal("lion","male", "40");
+  var zooAnimal2 = new zooAnimal("capybara","female", "70");
+  var zooAnimal3 = new zooAnimal("tiger","male", "30");
+  var zooAnimal4 = new zooAnimal("elephant","female", "20");
+  var zooAnimal5 = new zooAnimal("zebra","male", "10");
+  var zooAnimal6 = new zooAnimal("penguin","female", "50");
+  var zooAnimal7 = new zooAnimal("monkey","male", "60");
+  var zooAnimal8 = new zooAnimal("giraffe","female", "70");
+  var zooAnimal9 = new zooAnimal("panda","male", "30");
+  var zooAnimal10 = new zooAnimal("hippo","female", "80");
+  zooAnimalCollection.push(zooAnimal1);
+  zooAnimalCollection.push(zooAnimal2);
+  zooAnimalCollection.push(zooAnimal3);
+  zooAnimalCollection.push(zooAnimal4);
+  zooAnimalCollection.push(zooAnimal5);
+  zooAnimalCollection.push(zooAnimal6);
+  zooAnimalCollection.push(zooAnimal7);
+  zooAnimalCollection.push(zooAnimal8);
+  zooAnimalCollection.push(zooAnimal9);
+  zooAnimalCollection.push(zooAnimal10);
+  myZooInfo();
+  myZoo();
+
+}();
+
+
+
+printMenu();
+
+
+
+
+
+
+
+
+
+
