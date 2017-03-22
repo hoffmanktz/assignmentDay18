@@ -51,7 +51,15 @@ var printMenu = function() {
 
 // Add an item
 var addItem = function () {
+	var description = sget("Please add a description of the item you're adding:").trim();
+	var price = sget("What is the price of this item:").trim();
+	var stockLevel = sget("How many of this item are you adding:").trim();
+	var newInventoryItems = new inventoryItems(description, price, stockLevel);
 
+	inventoryArray.push(newInventoryItems);
+	console.log(inventoryArray);
+	returnToMain();
+	store();
 };
 
 // Delete Item
