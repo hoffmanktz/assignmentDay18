@@ -13,6 +13,32 @@ var inventoryItems = function(description, price, stockLevel) {
 	this.stockLevel = stockLevel;
 };
 
+//****************** MENUS ********************
+
+// Main menu screen
+ var mainMenu = {
+ 	welcome: "Welcome to the retail store!\n",
+ 	add: "1. Add an item",
+ 	delete: "2. Delete an item",
+ 	search: "3. Search for an item",
+ 	modify: "4. Modify stock level of an item",
+ 	change: "5. Change item description",
+ 	exit: "6. Exit Retail Store app"
+ };
+
+//************** MENU PROMPTS ******************
+
+// Prints the Welcome to game Menu
+var printMenu = function() {
+	sleep(800);
+	wipeScreen();
+    for (var key in mainMenu) {
+      console.log(mainMenu[key]);
+    }
+};
+
+
+
 // Add an item
 var addItem = function () {
 
