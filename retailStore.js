@@ -5,6 +5,7 @@
 - Users should be able to add an item, delete an item, search for an item, modify the number of items available, and change an item’s description
 
 */
+var sget = require("sget");
 
 var inventoryArray = [];
 
@@ -25,7 +26,7 @@ var inventoryItems = function(description, price, stockLevel) {
  	search: "3. Search for an item",
  	modify: "4. Modify stock level of an item",
  	change: "5. Change item description",
- 	exit: "6. Exit Retail Store app"
+ 	exit: "6. Exit Retail Store app\n"
  };
 
 //************** MENU PROMPTS ******************
@@ -68,6 +69,8 @@ var changeItemDescription = function () {
 
 // Exit Program function
 var exit = function () {
+	console.log("Goodbye!");
+	sleep(800);
 	process.exit();
 };
 
@@ -95,36 +98,48 @@ var sleep = function(milliseconds) {
 
 //-------------------------------------------------------
 
+var store = function () {
+	sleep(200);
+	wipeScreen();
+	printMenu();
+	var userSelect = sget("What would you like to do?\n").trim();
+	userSelect = userSelect.toLowerCase();
+
+		if(userSelect == 1) {
+        	addItem();
+        } else if(userSelect == 2) {
+        	deleteItem();
+        } else if(userSelect == 3) {
+        	search();
+        } else if(userSelect == 4) {
+            modifyItemInventory();
+        } else if(userSelect == 5) {
+            changeItemDescription();
+        } else if(userSelect == 6) {
+            exit();
+        } else {
+            console.log("Invalid Selection. Please try again.");
+            store();
+        }
+};
+
+
 // run the program
-run = function() {
-  var zooAnimal1 = new zooAnimal("lion","male", "40");
-  var zooAnimal2 = new zooAnimal("capybara","female", "70");
-  var zooAnimal3 = new zooAnimal("tiger","male", "30");
-  var zooAnimal4 = new zooAnimal("elephant","female", "20");
-  var zooAnimal5 = new zooAnimal("zebra","male", "10");
-  var zooAnimal6 = new zooAnimal("penguin","female", "50");
-  var zooAnimal7 = new zooAnimal("monkey","male", "60");
-  var zooAnimal8 = new zooAnimal("giraffe","female", "70");
-  var zooAnimal9 = new zooAnimal("panda","male", "30");
-  var zooAnimal10 = new zooAnimal("hippo","female", "80");
-  zooAnimalCollection.push(zooAnimal1);
-  zooAnimalCollection.push(zooAnimal2);
-  zooAnimalCollection.push(zooAnimal3);
-  zooAnimalCollection.push(zooAnimal4);
-  zooAnimalCollection.push(zooAnimal5);
-  zooAnimalCollection.push(zooAnimal6);
-  zooAnimalCollection.push(zooAnimal7);
-  zooAnimalCollection.push(zooAnimal8);
-  zooAnimalCollection.push(zooAnimal9);
-  zooAnimalCollection.push(zooAnimal10);
-  myZooInfo();
-  myZoo();
+// run = function() {
+//   var inventoryItems1 = new inventoryItems("Blue T-shirt","40", "10");
+//   var inventoryItems2 = new inventoryItems("Purple Jeans","60", "8");
+//   var inventoryItems3 = new inventoryItems("Yellow Sweater","30", "5");
+//   inventoryArray.push(inventoryItems1);
+//   inventoryArray.push(inventoryItems2);
+//   inventoryArray.push(inventoryItems3);
 
-}();
+//   // store();
 
+// }();
 
+store();
 
-printMenu();
+// printMenu();
 
 
 
