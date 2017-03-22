@@ -17,3 +17,32 @@
 // Modify the number of items available
 
 // Change item description
+
+// Exit Program function
+var exit = function () {
+	process.exit();
+};
+
+//----------------HELPFUL TOOLS---------------------------
+
+// Return to main menu prompt function
+var returnToMain = function () {
+	var returnToMain = sget("\nPress enter to return to main menu..").trim();
+};
+
+//clean screen
+var wipeScreen = function () {
+  return process.stdout.write('\033c');
+};
+
+//sleep timer
+var sleep = function(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+      if ((new Date().getTime() - start) > milliseconds){
+        break;
+      }
+    }
+};
+
+//-------------------------------------------------------
