@@ -9,6 +9,8 @@ var sget = require("sget");
 
 var inventoryArray = [];
 
+
+
 // Constructor of Item (description, price, stock)
 var inventoryItems = function(description, price, stockLevel) {
 	this.description = description;
@@ -27,6 +29,11 @@ var inventoryItems = function(description, price, stockLevel) {
  	modify: "4. Modify stock level of an item",
  	change: "5. Change item description",
  	exit: "6. Exit Retail Store app\n"
+ };
+
+ var inventoryMenu = {
+ 	modify: "1. Modify Stock level for this item",
+ 	change: "2. Change the item description"
  };
 
 //************** MENU PROMPTS ******************
@@ -55,6 +62,8 @@ var deleteItem = function () {
 // Search for an Item
 var search = function () {
 
+returnToMain();
+store();
 };
 
 // Modify the number of items available
@@ -123,19 +132,6 @@ var store = function () {
         }
 };
 
-
-// run the program
-// run = function() {
-//   var inventoryItems1 = new inventoryItems("Blue T-shirt","40", "10");
-//   var inventoryItems2 = new inventoryItems("Purple Jeans","60", "8");
-//   var inventoryItems3 = new inventoryItems("Yellow Sweater","30", "5");
-//   inventoryArray.push(inventoryItems1);
-//   inventoryArray.push(inventoryItems2);
-//   inventoryArray.push(inventoryItems3);
-
-//   // store();
-
-// }();
 
 store();
 
