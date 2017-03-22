@@ -6,7 +6,12 @@
 
 */
 
-// Constructor of Item (description, price, inventory number)
+// Constructor of Item (description, price, stock)
+var inventoryItems = function(description, price, stockLevel) {
+	this.description = description;
+	this.price = price;
+	this.stockLevel = stockLevel;
+};
 
 // Add an item
 var addItem = function () {
