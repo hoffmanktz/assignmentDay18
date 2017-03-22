@@ -9,14 +9,29 @@
 // Constructor of Item (description, price, inventory number)
 
 // Add an item
+var addItem = function () {
+
+};
 
 // Delete Item
+var deleteItem = function () {
+
+};
 
 // Search for an Item
+var search = function () {
+
+};
 
 // Modify the number of items available
+var modifyItemInventory = function () {
+
+};
 
 // Change item description
+var changeItemDescription = function () {
+
+};
 
 // Exit Program function
 var exit = function () {
