@@ -64,14 +64,43 @@ var addItem = function () {
 
 // Delete Item
 var deleteItem = function () {
+// 	var userSelect = sget("Which item would you like to remove").trim();
+// 	userSelect = userSelect.toLowerCase();
 
+// 	for (var i = 0; i < zooAnimalCollection.length; i++) {
+// 		if ((zooAnimalCollection[i].species == userSelect) || (zooAnimalCollection[i].gender == userSelect)) {
+// 			zooAnimalCollection.splice(i, 1);
+// 			break;
+// 		}
+
+// 		if (i == zooAnimalCollection.length-1) {
+// 			console.log("Animal not found.");
+// 		}
+// 	}
+// 	console.log(zooAnimalCollection);
+// // 	returnToZoo();
+// 	myZoo();
 };
 
 // Search for an Item
 var search = function () {
 
-returnToMain();
-store();
+	var searchItems = sget("\nWhat item are you looking for?").trim();
+	searchItems = searchItems.toLowerCase();
+
+	var matchingItems = [];
+	
+	inventoryArray.forEach(function(currentItem) {
+
+		if (searchItems == currentItem.description || searchItems == currentItem.price) {
+			matchingItems.push(currentItem);
+		} 
+		
+	});
+
+	console.log(matchingItems);
+	returnToMain();
+	store();
 };
 
 // Modify the number of items available
