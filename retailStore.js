@@ -64,22 +64,22 @@ var addItem = function () {
 
 // Delete Item
 var deleteItem = function () {
-// 	var userSelect = sget("Which item would you like to remove").trim();
-// 	userSelect = userSelect.toLowerCase();
+	var userSelect = sget("Which item would you like to remove").trim();
+	userSelect = userSelect.toLowerCase();
 
-// 	for (var i = 0; i < zooAnimalCollection.length; i++) {
-// 		if ((zooAnimalCollection[i].species == userSelect) || (zooAnimalCollection[i].gender == userSelect)) {
-// 			zooAnimalCollection.splice(i, 1);
-// 			break;
-// 		}
+	for (var i = 0; i < inventoryArray.length; i++) {
+		if ((inventoryArray[i].description == userSelect) || (inventoryArray[i].price == userSelect)) {
+			inventoryArray.splice(i, 1);
+			break;
+		}
 
-// 		if (i == zooAnimalCollection.length-1) {
-// 			console.log("Animal not found.");
-// 		}
-// 	}
-// 	console.log(zooAnimalCollection);
-// // 	returnToZoo();
-// 	myZoo();
+		if (i == inventoryArray.length-1) {
+			console.log("Item not found.");
+		}
+	}
+	console.log(inventoryArray);
+	returnToMain();
+	store();
 };
 
 // Search for an Item
