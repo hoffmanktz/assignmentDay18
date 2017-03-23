@@ -57,9 +57,19 @@ var addItem = function () {
 	var newInventoryItems = new inventoryItems(description, price, stockLevel);
 
 	inventoryArray.push(newInventoryItems);
-	console.log(inventoryArray);
-	returnToMain();
-	store();
+	
+	console.log("\nThere are " + inventoryArray.length + " items in your store.\n");
+  	
+  		if (inventoryArray.length > 0) {
+   			inventoryArray.forEach(function(item) {
+   			sleep(400);
+       		console.log("\n" + item.description + " for $" + item.price + ", with " + item.stockLevel + " left in stock.");
+    		});
+		}
+
+returnToMain();
+store();
+
 };
 
 // Delete Item
